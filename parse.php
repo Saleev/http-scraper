@@ -10,7 +10,9 @@
 
         public function __construct($html, $url)
         {
-            $url = str_replace('index.html', '', $url);            
+            $urls = explode('/', $url);
+	    $cnt = count($urls)-1;			
+            $url = str_replace($urls[$cnt], '', $url);   	
             $this->url = $url;
             $this->html = $html;
             $this->save();
